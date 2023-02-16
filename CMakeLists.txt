@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
-project(XMLParser)
+project(PSE)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(PSE main.cpp parser/Byamba/CD.cpp parser/Byamba/tinystr.cpp parser/Byamba/tinyxml.cpp parser/Byamba/tinyxmlerror.cpp
+add_executable(${CMAKE_PROJECT_NAME} main.cpp parser/Byamba/CD.cpp parser/Byamba/tinystr.cpp parser/Byamba/tinyxml.cpp parser/Byamba/tinyxmlerror.cpp
         parser/Byamba/tinyxmlparser.cpp)

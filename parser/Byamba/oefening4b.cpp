@@ -6,12 +6,13 @@
 
 using namespace std;
 
+//Source: https://stackoverflow.com/questions/4654636/how-to-determine-if-a-string-is-a-number-with-c
 bool is_int(const std::string &s) {
     std::string::const_iterator it = s.begin();
     while (it != s.end() && std::isdigit(*it)) ++it;
     return !s.empty() && it == s.end();
 }
-
+//Source: https://stackoverflow.com/questions/29169153/how-do-i-verify-a-string-is-valid-double-even-if-it-has-a-point-in-it
 bool is_double(const string &s) {
     int nb_point = 0;
     for (int i = 0; i < s.length(); i++) {
@@ -45,7 +46,8 @@ int main() {
     for (TiXmlElement *elem = root->FirstChildElement(); elem != NULL; elem = elem->NextSiblingElement()) {
         CD toSave;
         for (TiXmlElement *elemInner = elem->FirstChildElement();
-             elemInner != NULL; elemInner = elemInner->NextSiblingElement()) {
+             elemInner != NULL;
+             elemInner = elemInner->NextSiblingElement()) {
             string elemName = elemInner->Value();
             const string text = elemInner->GetText();
             if (elemName == "TITLE") {
